@@ -15,11 +15,25 @@ function AddItems() {
       ></SectionTitle>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input {...register("name")} />
+          <div className="w-full my-6 form-control">
+            <label className="label">
+              <span className="label-text">Recipe Name* </span>
+            </label>
+            <input
+              type="text"
+              placeholder="Recipe Name"
+              {...register("name")}
+              className="w-full input input-bordered"
+            />
+          </div>
+          <div>
+            {/* category */}
+            {/* Price */}
+          </div>
 
           <select
             {...register("category")}
-            className="w-full max-w-xs select select-bordered"
+            className="w-full select select-bordered"
           >
             <option disabled selected>
               Select a category
