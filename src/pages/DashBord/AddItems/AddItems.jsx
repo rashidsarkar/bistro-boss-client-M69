@@ -23,7 +23,8 @@ function AddItems() {
             <input
               type="text"
               placeholder="Recipe Name"
-              {...register("name")}
+              {...register("name", { required: true })}
+              required
               className="w-full input input-bordered"
             />
           </div>
@@ -34,7 +35,7 @@ function AddItems() {
                 <span className="label-text">Category</span>
               </label>
               <select
-                {...register("category")}
+                {...register("category", { required: true })}
                 className="w-full select select-bordered"
               >
                 <option disabled selected>
@@ -55,7 +56,7 @@ function AddItems() {
               <input
                 type="number"
                 placeholder="Price"
-                {...register("price")}
+                {...register("price", { required: true })}
                 className="w-full input input-bordered"
               />
             </div>
@@ -66,15 +67,20 @@ function AddItems() {
               <span className="label-text">Recipe Details</span>
             </label>
             <textarea
+              {...register("recipe")}
               className="h-24 textarea textarea-bordered"
-              placeholder="Bio"
+              placeholder="Recipe Details"
             ></textarea>
           </div>
           <div className="w-full my-6 form-control">
-            <input type="file" className="w-full max-w-xs file-input" />
+            <input
+              {...register("image", { required: true })}
+              type="file"
+              className="w-full max-w-xs file-input"
+            />
           </div>
 
-          <button className="btn">
+          <button type="submit" className="btn">
             Add Item <FaUtensils className="ml-4"></FaUtensils>
           </button>
         </form>
