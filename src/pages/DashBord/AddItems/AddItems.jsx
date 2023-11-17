@@ -16,12 +16,11 @@ function AddItems() {
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input {...register("name")} />
-          <select {...register("category")}>
-            <option value="salad">salad</option>
-            <option value="male">male</option>
-            <option value="other">other</option>
-          </select>
-          <select className="w-full max-w-xs select select-bordered">
+
+          <select
+            {...register("category")}
+            className="w-full max-w-xs select select-bordered"
+          >
             <option disabled selected>
               Select a category
             </option>
