@@ -13,6 +13,7 @@ import Allusers from "../pages/DashBord/Allusers/Allusers.JSX";
 import AddItems from "../pages/DashBord/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItem from "../pages/DashBord/ManageItem/ManageItem";
+import UpdatedItem from "../pages/DashBord/UpdatedItem/UpdatedItem";
 
 export const router = createBrowserRouter([
   {
@@ -77,6 +78,16 @@ export const router = createBrowserRouter([
             <ManageItem />
           </AdminRoute>
         ),
+      },
+      {
+        path: `/dashBord/updateItem/:id`,
+        element: (
+          <AdminRoute>
+            <UpdatedItem />
+          </AdminRoute>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/menu/${params.id}`),
       },
       {
         path: "allUsers",

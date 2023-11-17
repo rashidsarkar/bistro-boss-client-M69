@@ -4,6 +4,7 @@ import useMenu from "../../../hooks/useMenu";
 import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 function ManageItem() {
   const [menu, loading, refetch] = useMenu();
@@ -34,11 +35,12 @@ function ManageItem() {
       }
     });
   };
-  const handleUpdateItem = (item) => {};
-  console.log("ok");
+
+  // console.log("ok");
   if (loading) {
     return <p>loading....</p>;
   }
+  console.log(menu);
   return (
     <div>
       <SectionTitle
@@ -80,12 +82,11 @@ function ManageItem() {
                     <td>{item.name}</td>
                     <td className="text-right">$ {item.price}</td>
                     <td>
-                      <button
-                        onClick={() => handleUpdateItem(item)}
-                        className="bg-orange-500 btn btn-sm "
-                      >
-                        <FaEdit className="text-white " />
-                      </button>
+                      <Link to={`/dashBord/updateItem/${item._id}`}>
+                        <button className="bg-orange-500 btn btn-sm ">
+                          <FaEdit className="text-white " />
+                        </button>
+                      </Link>
                     </td>
                     <td className="">
                       <button
