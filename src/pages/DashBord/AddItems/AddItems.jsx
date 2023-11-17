@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import { FaUtensils } from "react-icons/fa6";
 
 function AddItems() {
   const { register, handleSubmit } = useForm();
@@ -73,7 +74,9 @@ function AddItems() {
             <input type="file" className="w-full max-w-xs file-input" />
           </div>
 
-          <button className="btn">Add Item</button>
+          <button className="btn">
+            Add Item <FaUtensils className="ml-4"></FaUtensils>
+          </button>
         </form>
       </div>
     </div>
